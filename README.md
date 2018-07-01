@@ -43,22 +43,38 @@ A Wenzel 100 MHz OCXO is used to provide an internal reference. This can be easi
 
 ### Schematics
 
++ [Circuit Schematic](hardware/adf4351-v5-sch.pdf)
+Wiring for Arduino/SV1AFN modules, and the ref auto switching circuit. 
 
 ### Arduino Nano
 
+An Arduino Nano is used for the microcontroller board.  This board has a small footprint, and low power consumption, and provides the USB interface.
+
 ### I/O
-+ LCD Display
-+ Matrix Keypad (16 keys) 
-+ USB Interface (Arduino)
-+ Precision Rotary Encoder (ACE128)
+
+#### LCD Display
+A basic 20x4 LCD display, with a PCF8574 interface (I2C). It uses the LiquidCrystal\_PCF8574 arduino library (included), which has a smaller size and appears to be faster than the standard LCD libraries.
+
+####  Matrix Keypad
+A 16 key Matrix keypad, using a PCF8574 module to detect and decode key presses, plus reduces the Arduino interface to 2 wires (I2C). The PCF8574 module was one designed for interfacing with LCDs, but it was modified to remove the transistor switch and resistor on pin 8 (normally used by LCDs), to restore pin 8 a regular digital pin.  This was done, as the keypad requires 8 digital pins from the PCF module (4x4 matrix). 
+
+The OneWireKey arduino library (included) provides the software API to detect key press, and distingish short, medium and long press times from the keypad.  
+
+The keypad is used for frequency settings, configuration and control settings. For this application, using a true keypad with nice tactile feedback allows for rapid entry of frequency and other settings.  
+
+#### High Precision Absolute Encoder (ACE128)
+A great Tindie project created by [RedHunter](https://www.tindie.com/products/arielnh56/high-resolution-absolute-encoder-128-positions/) provides a precision rotary encoder for the Arduino. The encoder is used for stepping frequency, which provides for a useful alterative to the keypad entry.  The ACE128 provides an Arduino library on their website.
 
 ## Software
+The Arduino software and specialized libaries are provided in the repository.  An ADF4351 interface API is provided, which can be used as a stand-alone library for other projects. 
 
-### Arduino
+ In order to accurately perform the necessary double long (64 bit) integer math operations for the PLL and frequency generation,  which is not provided by the native Arduino libraries, the fantastic  `BigNumber` Arduino library by Nick Gammon was used.  This library was modified in order to provide unsigned long integer interfaces, so use the one provided in the repository, rather than the one from Nick.  
 
-### Libraries
+Other libaries include an EEPROM extension for reading and writing settings to the EEPROM (for maintaining settings between reboots), and the I/O libraries for the LCD, encoder and keypad. 
 
-## Theory of Operation
+### Installation
+Copy the `src/` directory to your Arduino sketchbook directory (named the directory `siggen4351`), and install the libraries in your Arduino library directory. 
+
 
 ## References
 

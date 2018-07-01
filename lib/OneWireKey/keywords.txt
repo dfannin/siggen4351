@@ -1,0 +1,17 @@
+# OWK data types
+OneWireKey KEYWORD1
+
+# OWK constants
+NUMR LITERIAL1
+NUMC LITERIAL1
+KP_INTERVAL LITERIAL1
+
+# Keypad Library methods & functions
+get_key KEYWORD2
+init KEYWORD2
+write KEYWORD2
+read KEYWORD2
+
+
+# List of objects created in the example sketches.
+owk KEYWORD3
