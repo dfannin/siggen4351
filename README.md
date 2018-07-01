@@ -1,6 +1,6 @@
 # siggen4351
 Signal Generator using ADF4351 and Arduino
-![sg01](doc/sg01.jpg)
+<img src="./doc/sg01.jpg" height ="250">
 
 ## Introduction
 This project is a wideband signal generator for frequencies from 35 MHz to 4.4 GHz. It was designed to be used as a bench or RF laboratory test equipment to provide a very wideband, and stable, and user controllable frequency reference source, suitible for use in RF circuit and testing activities.  However, the techniques and circuits used can be adapted for other uses, including a VHF/UHF/microwave VFO or Local Oscillator for ham radio projects, or (with modified software) as a sweep generator or other test equipment. 
