@@ -1,5 +1,5 @@
 # siggen4351
-Signal Generator using ADF4351 and Arduino
+*Signal Generator using ADF4351 and Arduino*
 <img src="./doc/sg01.jpg" height ="250">
 
 ## Introduction
@@ -84,3 +84,9 @@ Copy the `src/` directory to your Arduino sketchbook directory (named the direct
 + [High Resolution Absolute Encoder ACE128](https://www.tindie.com/products/arielnh56/high-resolution-absolute-encoder-128-positions/) by RedHunter on Tindie
 + [Big Number Arduino Library](https://github.com/nickgammon/BigNumber) by Nick Gammon
 + [LiquidCrystal_PCF8574](https://github.com/mathertel/LiquidCrystal_PCF8574) by Matthias Hertel
+
+## Pics
+
+<img src="./doc/sg01.jpg" height ="300">
+<img src="./doc/sg02.jpg" height ="300">
+<img src="./doc/sg03.jpg" height ="300">
